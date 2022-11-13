@@ -1,0 +1,217 @@
+\documentclass[graybox,envcountchap,sectrefs]{svmono}
+
+\usepackage{type1cm}         
+
+\usepackage{makeidx}         % allows index generation
+\usepackage{graphicx}        % standard LaTeX graphics tool
+                             % when including figure files
+\usepackage{multicol}        % used for the two-column index
+\usepackage[bottom]{footmisc}% places footnotes at page bottom
+
+\usepackage{newtxtext}       % 
+\usepackage{newtxmath}       % selects Times Roman as basic font
+
+%\usepackage{mathptmx}
+%\usepackage{amsmath} 
+%\usepackage{amssymb}
+%\usepackage{times}
+\usepackage{marginnote}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{xr}
+\usepackage[utf8]{inputenc} 
+\usepackage[spanish]{babel}
+\usepackage{csquotes}% no se para que es
+\usepackage{setspace} %para la carátula
+\usepackage{fancyhdr}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage{chngpage} 
+\usepackage{xspace} 
+\renewcommand{\theenumi}{\alph{enumi}}
+\renewcommand{\labelenumi}{{\theenumi})} 
+\usepackage{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% bibliografía
+\usepackage[backend=biber, url=false, doi=false, isbn=false, style=alphabetic, maxalphanames=1]{biblatex}
+\DefineBibliographyStrings{spanish}{andothers={\textit{et al.}}}
+\renewbibmacro{in:}{}
+\renewcommand*{\labelalphaothers}{}
+
+\DeclareLabelalphaTemplate{
+  \labelelement{
+    \field[final]{shorthand}
+    \field{labelname}
+    \field{label}
+  }
+  \labelelement{
+    \field[strwidth=4, strside=right]{year}
+  }
+}
+\addbibresource{./autora/referencias.bib}
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+
+%\oddsidemargin -0.25in		% Left margin is 1in + this value
+%\textwidth 6.75in		% Right margin is not set explicitly
+%\topmargin 0in			% Top margin is 1in + this value
+%\textheight 9in			% Bottom margin is not set explicitly
+
+\usepackage[affil-it]{authblk} 
+
+
+\newcommand*\mybackmatter{%
+\startcontents
+\phantomsection
+\addcontentsline{toc}{part}{}%
+\@endpart}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% see the list of further useful packages
+% in the Reference Guide
+
+\makeindex             % used for the subject index
+                       % please use the style svind.ist with
+                       % your makeindex program
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\graphicspath{{./}{figures/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{appendix}
+\AtBeginEnvironment{subappendices}{%
+\chapter*{Apéndice}
+\addcontentsline{toc}{chapter}{Apéndice}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% paquetes para la nomenclatura
+%\usepackage{nomencl}
+%% This code creates the groups
+% -----------------------------------------
+%\usepackage{etoolbox}
+%\renewcommand\nomgroup[1]{%
+%  \item[\bfseries
+%  \ifstrequal{#1}{V}{Variables}{%
+%  \ifstrequal{#1}{A}{Abreviaciones}}%
+%]}
+% -----------------------------------------
+
+\DeclareMathOperator\erf{erf} 
+
+%%% las variables del pulse detection
+\newcommand*{\epsplus}{\ensuremath{\epsilon_{+}}\xspace}
+\newcommand*{\xxi}{\ensuremath{\theta_i}\xspace}
+\newcommand*{\xxe}{\ensuremath{\theta_e}\xspace}
+\newcommand*{\xx}{\ensuremath{\theta}\xspace}
+\newcommand*{\deltax}{\ensuremath{\delta\theta}\xspace}
+\newcommand*{\tplus}{\ensuremath{t_{+}}\xspace}
+\newcommand*{\epstplus}{\ensuremath{\epsilon t_+}\xspace}
+\newcommand*{\Depstplus}{\ensuremath{\epsilon t_+ '}\xspace}
+\newcommand*{\DDepstplus}{\ensuremath{\epsilon t_+ ''}\xspace}
+\newcommand*{\DepstplusH}{\ensuremath{\epsilon t_{+h} '}\xspace} 
+\newcommand*{\DDepstplusH}{\ensuremath{\epsilon t_{+h} ''}\xspace} 
+\newcommand*{\ddelta}{\ensuremath{\frac{\alpha}{\omega}}\xspace}
+\newcommand*{\dddelta}{\ensuremath{\alpha/\omega}\xspace}
+\newcommand*{\VD}{\ensuremath{\frac{V(x)}{D}}\xspace}
+
+\linespread{1} %espacio entre lineas
+%\makenomenclature
+\usepackage{subfiles}
+\begin{document}
+
+
+\frontmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subfile{autora/A0_caratula}
+
+%\newpage
+%\author{Lic. Fiorella Fabris}
+%\title{Oscilaciones intermitentes de señales moleculares\\en células madre embrionarias}
+%\subtitle{un enfoque interdisciplinario}
+%\date{11 de Agosto de 2022}
+%\maketitle
+
+%\subfile{autora/A1_dedicatoria}
+%\subfile{autora/A1_agradecimientos}
+\subfile{autora/A2_resumen}
+\subfile{autora/A3_nota_de_autora}
+\tableofcontents
+\subfile{autora/A4_nomenclatura}
+
+
+\mainmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagenumbering{arabic}
+
+\chapter{Introducción}
+\label{ch1}
+\subfile{chapters/chapter1}
+
+\chapter{Oscilaciones intermitentes en células madre embrionarias}
+\chaptermark{Oscilaciones intermitentes en ESCs}
+\label{ch2}
+\subfile{chapters/chapter2}
+
+\chapter{Las oscilaciones dependen del estímulo extracelular y del estadío de diferenciación celular}
+\chaptermark{Las oscilaciones dependen de ...}
+\label{ch3}
+\subfile{chapters/chapter3}
+
+\chapter{Los pulsos de ERK son más prevalentes al comienzo del ciclo celular}
+\chaptermark{Los pulsos de ERK son más prevalentes ...}
+\label{ch4}
+\subfile{chapters/chapter4}
+
+\chapter{El modelo de fase con bifurcación de ciclo infinito con ruido blanco gaussiano presenta oscilaciones, silencios y pulsos aislados}
+\label{ch5}
+\chaptermark{Modelo de fase con bifurcación de ciclo infinito con ruido blanco gaussiano}
+\subfile{chapters/chapter5}
+
+
+%\chapter{Modelo de fase con bifurcación de ciclo infinito con ruido blanco gaussiano}
+%\chaptermark{Modelo con ruido blanco gaussiano}
+%\subfile{chapters/chapter6}
+%\label{ch6} 
+
+
+\chapter{Transiciones entre oscilaciones y excitabilidad describen las oscilaciones intermitentes}
+\chaptermark{Transiciones entre oscilaciones y excitabilidad...}
+\label{ch7}
+\subfile{chapters/chapter7}
+
+\chapter{Conclusiones generales y perspectivas}
+\subfile{chapters/chapter8}
+\label{ch8}
+
+\appendix
+\subfile{chapters/apendice}
+
+
+
+\backmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Bibliografía}
+\printbibliography
+
+\end{document}
+
+
+
+\mainmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\include{author/part}
+%\include{author/chapter}
+%\include{author/appendix}
+
+%\backmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\include{author/glossary}
+%\include{author/solutions}
+%\printindex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+

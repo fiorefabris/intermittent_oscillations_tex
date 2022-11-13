@@ -1,0 +1,41 @@
+\documentclass[./main.tex]{subfiles}
+
+
+\begin{document}
+
+\Extrachap{Resumen}
+
+Desde un enfoque interdisciplinario, en esta tesis estudiamos la dinámica de activación de la quinasa ERK en células madre embrionarias (ESCs). Si bien se conoce que la diferenciación de las ESCs en varios linajes requiere de la activación de ERK, su dinámica de señalización a corto plazo no estaba explorada en este sistema biológico. En este trabajo construimos una descripción de la dinámica de activación de ERK en ESCs, y proponemos un modelo teórico capaz de reproducirla. 
+
+Primero extraemos series temporales a partir de filmaciones de colonias de células \textit{in vitro} que tienen integrado un sensor de translocación capaz de medir la actividad de ERK en células individuales. Con métodos de análisis de series temporales que desarrollamos en este trabajo, encontramos que el patrón de actividad de ERK consiste en un tipo de dinámica previamente no descripto, que llamamos oscilaciones intermitentes: intervalos de oscilaciones alternados con intervalos de silencios y pulsos aislados. 
+
+En base a nuevas mediciones en células mutantes que no producen el principal ligando que desencadena la actividad de ERK, encontramos que los intervalos oscilatorios son desatados por el estímulo extracelular y aumentan su duración a mayores dosis. Comparando las dinámicas de activación de ERK en ESCs y un tipo celular levemente más diferenciado, encontramos que la extensión de los intervalos oscilatorios depende del estadío de diferenciación celular. Luego realizamos nuevas mediciones que abarcan todo el ciclo celular en ESCs, obteniendo series temporales más largas pero de menor resolución. Implementamos un nuevo protocolo para analizar series temporales con estas características, y encontramos que las ESCs son más propensas a pulsar en fases más tempranas del ciclo celular.
+
+Posteriormente, para dar con un modelo teórico de la descripción que construimos, estudiamos un modelo de fase con bifurcación de ciclo infinito en donde un ciclo representaría un pulso de ERK. Regulando la amplitud de modulación, este modelo presenta transiciones entre un régimen oscilatorio y uno excitable. Añadiendo ruido blanco gaussiano, se consigue una dinámica pulsátil en el régimen excitable. A partir de analizar series temporales sintéticas y cálculos teóricos usando el formalismo de tiempo de primer pasaje, examinamos la estructura de este régimen pulsátil. Luego comparamos el modelo con los experimentos, y hallamos que este modelo no es capaz de reproducir la actividad heterogénea de ERK en células individuales que reflejan los experimentos. 
+
+Motivados por estos resultados, estudiamos los efectos de añadir variabilidad a la amplitud de modulación, buscando representar cierta variabilidad entre las células. Mostramos que si la redefinimos como un parámetro con distribución gaussiana, obtenemos una descripción más acorde a los datos experimentales, pero que no reproduce correctamente la estadística de intervalos oscilatorios. Como alternativa, proponemos describir a la amplitud de modulación como un proceso de Ornstein-Uhlenbeck. Encontramos que esta descripción presenta transiciones entre oscilaciones, y silencios y pulsos aislados como los experimentos, lo que sugiere la presencia de una variabilidad celular con escalas temporales lentas.
+\vspace{0.5cm}
+
+\textit{\textbf{Palabras claves:} células madre embrionarias, sistema de señalización FGF/ERK, series temporales, oscilaciones intermitentes, ecuación de Adler, modelos de fase estocásticos.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\extrachap{Abstract}
+
+Taking an interdisciplinary approach, in this thesis we study the dynamics of the extracellular signal-regulated kinase (ERK) activation in embryonic stem cells (ESCs). Although it is known that differentiation of ESCs into various lineages requires ERK activity, its short-term signalling dynamics in this biological system was previously unexplored. Here we obtain a description of ERK activity dynamics in ESCs, and propose a theoretical model capable of reproducing it.
+
+We first obtain time series from time-lapse movies of \textit{in vitro} cell colonies with a translocation sensor that measures single cell ERK activity integrated. With time series analysis methods that we develop in this work, we find that ERK activity consists in a novel type of dynamics, that we termed intermittent oscillations: intervals of oscillations interspersed with silent intervals and isolated pulses.
+
+From new measurements of mutant cells that cannot produce the main ligand that triggers ERK activity, we find that the oscillatory intervals are provoked by the extracellular stimulus and increase their duration at higher doses. Comparing the dynamics of ERK activity in ESCs and in a slightly more differentiated cell type, we find that the duration of the oscillatory intervals depends on the cell differentiation state. Then, we perform new measurements over the entire cell cycle in ESCs, obtaining longer but lower-resolution time series. We implement a new protocol to analyse time series with these characteristics, and find that ESCs are more likely to pulse earlier in the cell cycle.
+
+Subsequently, to build a theoretical model of the description we built, we study a phase model with an infinite cycle bifurcation, where one cycle would represent an ERK pulse. By regulating the modulation amplitude, this model transitions between an oscillatory and an excitable regime. By adding gaussian white noise, it is possible to have pulses in the excitable regime. By analysing synthetic time series and performing theoretical calculations using the first-passage time formalism, we study the structure of this pulsatile regime. We then compare the model with experiments, and find that the model is not capable of reproducing the heterogeneous single cell ERK activity measured in the experiments.
+
+Motivated by these results, we study the effects of adding variability to the modulation amplitude, looking forward to represent a certain variability between cells. We show that redefining it as a parameter with a gaussian distribution, we obtain a description more in agreement with the experimental data, but the oscillatory interval statistics are not correctly reproduced. As an alternative, we propose to describe the modulation amplitude as an Ornstein-Uhlenbeck process. We find that this description can have transitions between oscillations, isolated silences and isolated pulses as the experiments, suggesting the presence of a long time scale cellular variability.
+\vspace{0.5cm}
+
+
+\textit{\textbf{Key words:} embryonic stem cells, FGF/ERK signalling system, time series, intermittent oscillations, Adler equation, stochastic phase models.}
+
+\end{document}
