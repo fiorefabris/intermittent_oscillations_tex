@@ -34,21 +34,21 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% bibliografía
-\usepackage[backend=biber, url=false, doi=false, isbn=false, style=alphabetic, maxalphanames=1]{biblatex}
-\DefineBibliographyStrings{spanish}{andothers={\textit{et al.}}}
-\renewbibmacro{in:}{}
-\renewcommand*{\labelalphaothers}{}
+\usepackage[backend=biber, maxnames=15, url=false, doi=false, isbn=false, citestyle=numeric-comp, bibstyle=ieee, sorting=none, date=year]{biblatex} %maxalphanames=1 
+%\DefineBibliographyStrings{spanish}{andothers={\textit{et al.}}}
+%\renewbibmacro{in:}{}
+%\renewcommand*{\labelalphaothers}{}
 
-\DeclareLabelalphaTemplate{
-  \labelelement{
-    \field[final]{shorthand}
-    \field{labelname}
-    \field{label}
-  }
-  \labelelement{
-    \field[strwidth=4, strside=right]{year}
-  }
-}
+%\DeclareLabelalphaTemplate{
+%  \labelelement{
+%    \field[final]{shorthand}
+%    \field{labelname}
+%    \field{label}
+%  }
+%  \labelelement{
+%    \field[strwidth=4, strside=right]{year}
+%  }
+%}
 \addbibresource{./autora/referencias.bib}
 \providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
 
@@ -82,10 +82,10 @@
 
 \usepackage{appendix}
 \AtBeginEnvironment{subappendices}{%
-\chapter*{Apéndice}
-\addcontentsline{toc}{chapter}{Apéndice}
-\counterwithin{figure}{section}
-\counterwithin{table}{section}
+\chapter*{Apéndices}
+\addcontentsline{toc}{chapter}{Apéndices}
+%\counterwithin{figure}{section}
+%\counterwithin{table}{section}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -119,14 +119,14 @@
 \newcommand*{\dddelta}{\ensuremath{\alpha/\omega}\xspace}
 \newcommand*{\VD}{\ensuremath{\frac{V(x)}{D}}\xspace}
 
-\linespread{1} %espacio entre lineas
+\linespread{1.2} %espacio entre lineas
 %\makenomenclature
 \usepackage{subfiles}
 \begin{document}
 
 
 \frontmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\subfile{autora/A0_caratula}
+\subfile{autora/A0_caratula}
 
 %\newpage
 %\author{Lic. Fiorella Fabris}
@@ -155,19 +155,19 @@
 \label{ch2}
 \subfile{chapters/chapter2}
 
-\chapter{Las oscilaciones dependen del estímulo extracelular y del estadío de diferenciación celular}
-\chaptermark{Las oscilaciones dependen de ...}
+\chapter{Las oscilaciones de ERK dependen del estímulo extracelular y del estadío de diferenciación celular}
+\chaptermark{Las oscilaciones de ERK dependen de ...}
 \label{ch3}
 \subfile{chapters/chapter3}
 
-\chapter{Los pulsos de ERK son más prevalentes al comienzo del ciclo celular}
+\chapter{Los pulsos de ERK son más prevalentes al principio del ciclo celular}
 \chaptermark{Los pulsos de ERK son más prevalentes ...}
 \label{ch4}
 \subfile{chapters/chapter4}
 
-\chapter{El modelo de fase con bifurcación de ciclo infinito con ruido blanco gaussiano presenta oscilaciones, silencios y pulsos aislados}
+\chapter{Un modelo de fase con bifurcación de ciclo infinito con ruido blanco gaussiano presenta oscilaciones, silencios y pulsos aislados}
+\chaptermark{Modelo de fase con ruido blanco gaussiano...}
 \label{ch5}
-\chaptermark{Modelo de fase con bifurcación de ciclo infinito con ruido blanco gaussiano}
 \subfile{chapters/chapter5}
 
 
@@ -182,11 +182,12 @@
 \label{ch7}
 \subfile{chapters/chapter7}
 
-\chapter{Conclusiones generales y perspectivas}
+\chapter{Conclusiones generales, discusión y perspectivas}
 \subfile{chapters/chapter8}
 \label{ch8}
 
 \appendix
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 \subfile{chapters/apendice}
 
 

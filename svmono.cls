@@ -164,8 +164,8 @@
 \DeclareOption{openany}{\@openrightfalse}
 %
 % no size changing allowed
-\DeclareOption{11pt}{\OptionNotUsed}
-\DeclareOption{10pt}{\OptionNotUsed} %antes estaba 10pt
+%\DeclareOption{11pt}{\OptionNotUsed}
+%\DeclareOption{10pt}{\OptionNotUsed} %antes estaba 10pt
 % options for the article class
 \def\@rticle@options{12pt,twoside} %antes era 10pt
 % fleqn
@@ -229,10 +229,10 @@ passing it to article class \MessageBreak
 
 % various sizes and settings for monographs
 
-\setlength{\textwidth}{125mm} %ANTES era 117mm
+\setlength{\textwidth}{135mm} %ANTES era 117mm
 %\setlength{\textheight}{12pt}\multiply\textheight by 45\relax
-\setlength{\textheight}{206mm} %ANTES era 191mm
-\setlength{\topmargin}{0cm}
+\setlength{\textheight}{238mm} %ANTES era 191mm
+\setlength{\topmargin}{-1cm}%antes era 0
 \setlength\oddsidemargin   {63\p@}
 \setlength\evensidemargin  {63\p@}
 \setlength\marginparwidth{90\p@}
